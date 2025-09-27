@@ -1,2 +1,2 @@
-mod bindings
+mod bindings;
 pub use bindings::*;
