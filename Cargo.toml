@@ -1,0 +1,22 @@
+[package]
+name = "obwio"
+version = "0.1.0"
+authors = ["Muhammad"]
+edition = "2021"
+description = "OpenCL bindings and runtime utilities for Rust"
+license = "Apache-2.0"
+repository = "https://github.com/yourusername/obwio"
+readme = "README.md"
+keywords = ["opencl", "gpu", "bindings", "runtime"]
+categories = ["api-bindings", "science", "hardware-support"]
+
+[build-dependencies]
+bindgen = "0.69"
+
+[[bin]]
+name = "obwio_test"
+path = "src/main.rs"
+
+
+[dependencies]
+
