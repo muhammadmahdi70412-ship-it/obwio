@@ -13,10 +13,6 @@ categories = ["api-bindings", "science", "hardware-support"]
 [build-dependencies]
 bindgen = "0.69"
 
-[[bin]]
-name = "obwio_test"
-path = "src/main.rs"
-
 
 [dependencies]
 
