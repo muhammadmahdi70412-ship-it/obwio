@@ -37,11 +37,17 @@ fn main() {
 }
 ```
 
+
+## OBRAH
+If you don't want to go through the trouble of pure bindings, use OBRAH.
+OBRAH is built on OBWIO, and provides a high-level interface for OpenCL in Rust.
+
 ## Requirements
 
 - Rust 1.70 or later
 - OpenCL SDK installed on your system
 - Compatible OpenCL runtime and drivers
+
 
 ## License
 
