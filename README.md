@@ -1,6 +1,6 @@
 # OBWIO
 
-OBWIO is a Rust crate that provides low-level bindings to the OpenCL API, enabling direct access to GPU compute functionality across platforms. It is designed for developers who want full control over OpenCL without relying on high-level abstractions or wrappers.
+OBWIO (OpenCL But With Iron Oxide) is a Rust crate that provides low-level bindings to the OpenCL API, enabling direct access to GPU compute functionality across platforms. It is designed for developers who want full control over OpenCL without relying on high-level abstractions or wrappers.
 
 ## Overview
 
