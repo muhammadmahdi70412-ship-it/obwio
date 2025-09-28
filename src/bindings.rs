@@ -14201,7 +14201,7 @@ unsafe extern "C" {
 unsafe extern "C" {
     pub fn clEnqueueNativeKernel(
         command_queue: cl_command_queue,
-        user_func: ::std::option::Option<unsafe unsafe extern "C" fn(arg1: *mut ::std::os::raw::c_void)>,
+        user_func: ::std::option::Option<unsafe extern "C" fn(arg1: *mut ::std::os::raw::c_void)>,
         args: *mut ::std::os::raw::c_void,
         cb_args: usize,
         num_mem_objects: cl_uint,
