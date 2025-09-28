@@ -2,7 +2,7 @@
 name = "obwio"
 version = "0.1.0"
 authors = ["Muhammad"]
-edition = "2021"
+edition = "2024"
 description = "OpenCL bindings and runtime utilities for Rust"
 license = "Apache-2.0"
 repository = "https://github.com/yourusername/obwio"
