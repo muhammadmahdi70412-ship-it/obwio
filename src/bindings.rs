@@ -13393,14 +13393,14 @@ fn bindgen_test_layout__cl_name_version() {
     );
 }
 pub type cl_name_version = _cl_name_version;
-extern "C" {
+unsafe extern "C" {
     pub fn clGetPlatformIDs(
         num_entries: cl_uint,
         platforms: *mut cl_platform_id,
         num_platforms: *mut cl_uint,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clGetPlatformInfo(
         platform: cl_platform_id,
         param_name: cl_platform_info,
@@ -13409,7 +13409,7 @@ extern "C" {
         param_value_size_ret: *mut usize,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clGetDeviceIDs(
         platform: cl_platform_id,
         device_type: cl_device_type,
@@ -13418,7 +13418,7 @@ extern "C" {
         num_devices: *mut cl_uint,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clGetDeviceInfo(
         device: cl_device_id,
         param_name: cl_device_info,
@@ -13427,7 +13427,7 @@ extern "C" {
         param_value_size_ret: *mut usize,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clCreateSubDevices(
         in_device: cl_device_id,
         properties: *const cl_device_partition_property,
@@ -13436,36 +13436,36 @@ extern "C" {
         num_devices_ret: *mut cl_uint,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clRetainDevice(device: cl_device_id) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clReleaseDevice(device: cl_device_id) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clSetDefaultDeviceCommandQueue(
         context: cl_context,
         device: cl_device_id,
         command_queue: cl_command_queue,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clGetDeviceAndHostTimer(
         device: cl_device_id,
         device_timestamp: *mut cl_ulong,
         host_timestamp: *mut cl_ulong,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clGetHostTimer(device: cl_device_id, host_timestamp: *mut cl_ulong) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clCreateContext(
         properties: *const cl_context_properties,
         num_devices: cl_uint,
         devices: *const cl_device_id,
         pfn_notify: ::std::option::Option<
-            unsafe extern "C" fn(
+            unsafe unsafe extern "C" fn(
                 errinfo: *const ::std::os::raw::c_char,
                 private_info: *const ::std::os::raw::c_void,
                 cb: usize,
@@ -13476,12 +13476,12 @@ extern "C" {
         errcode_ret: *mut cl_int,
     ) -> cl_context;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clCreateContextFromType(
         properties: *const cl_context_properties,
         device_type: cl_device_type,
         pfn_notify: ::std::option::Option<
-            unsafe extern "C" fn(
+            unsafe unsafe extern "C" fn(
                 errinfo: *const ::std::os::raw::c_char,
                 private_info: *const ::std::os::raw::c_void,
                 cb: usize,
@@ -13492,13 +13492,13 @@ extern "C" {
         errcode_ret: *mut cl_int,
     ) -> cl_context;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clRetainContext(context: cl_context) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clReleaseContext(context: cl_context) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clGetContextInfo(
         context: cl_context,
         param_name: cl_context_info,
@@ -13507,16 +13507,16 @@ extern "C" {
         param_value_size_ret: *mut usize,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clSetContextDestructorCallback(
         context: cl_context,
         pfn_notify: ::std::option::Option<
-            unsafe extern "C" fn(context: cl_context, user_data: *mut ::std::os::raw::c_void),
+            unsafe unsafe extern "C" fn(context: cl_context, user_data: *mut ::std::os::raw::c_void),
         >,
         user_data: *mut ::std::os::raw::c_void,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clCreateCommandQueueWithProperties(
         context: cl_context,
         device: cl_device_id,
@@ -13524,13 +13524,13 @@ extern "C" {
         errcode_ret: *mut cl_int,
     ) -> cl_command_queue;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clRetainCommandQueue(command_queue: cl_command_queue) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clReleaseCommandQueue(command_queue: cl_command_queue) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clGetCommandQueueInfo(
         command_queue: cl_command_queue,
         param_name: cl_command_queue_info,
@@ -13539,7 +13539,7 @@ extern "C" {
         param_value_size_ret: *mut usize,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clCreateBuffer(
         context: cl_context,
         flags: cl_mem_flags,
@@ -13548,7 +13548,7 @@ extern "C" {
         errcode_ret: *mut cl_int,
     ) -> cl_mem;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clCreateSubBuffer(
         buffer: cl_mem,
         flags: cl_mem_flags,
@@ -13557,7 +13557,7 @@ extern "C" {
         errcode_ret: *mut cl_int,
     ) -> cl_mem;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clCreateImage(
         context: cl_context,
         flags: cl_mem_flags,
@@ -13567,7 +13567,7 @@ extern "C" {
         errcode_ret: *mut cl_int,
     ) -> cl_mem;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clCreatePipe(
         context: cl_context,
         flags: cl_mem_flags,
@@ -13577,7 +13577,7 @@ extern "C" {
         errcode_ret: *mut cl_int,
     ) -> cl_mem;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clCreateBufferWithProperties(
         context: cl_context,
         properties: *const cl_mem_properties,
@@ -13587,7 +13587,7 @@ extern "C" {
         errcode_ret: *mut cl_int,
     ) -> cl_mem;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clCreateImageWithProperties(
         context: cl_context,
         properties: *const cl_mem_properties,
@@ -13598,13 +13598,13 @@ extern "C" {
         errcode_ret: *mut cl_int,
     ) -> cl_mem;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clRetainMemObject(memobj: cl_mem) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clReleaseMemObject(memobj: cl_mem) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clGetSupportedImageFormats(
         context: cl_context,
         flags: cl_mem_flags,
@@ -13614,7 +13614,7 @@ extern "C" {
         num_image_formats: *mut cl_uint,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clGetMemObjectInfo(
         memobj: cl_mem,
         param_name: cl_mem_info,
@@ -13623,7 +13623,7 @@ extern "C" {
         param_value_size_ret: *mut usize,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clGetImageInfo(
         image: cl_mem,
         param_name: cl_image_info,
@@ -13632,7 +13632,7 @@ extern "C" {
         param_value_size_ret: *mut usize,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clGetPipeInfo(
         pipe: cl_mem,
         param_name: cl_pipe_info,
@@ -13641,16 +13641,16 @@ extern "C" {
         param_value_size_ret: *mut usize,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clSetMemObjectDestructorCallback(
         memobj: cl_mem,
         pfn_notify: ::std::option::Option<
-            unsafe extern "C" fn(memobj: cl_mem, user_data: *mut ::std::os::raw::c_void),
+            unsafe unsafe extern "C" fn(memobj: cl_mem, user_data: *mut ::std::os::raw::c_void),
         >,
         user_data: *mut ::std::os::raw::c_void,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clSVMAlloc(
         context: cl_context,
         flags: cl_svm_mem_flags,
@@ -13658,23 +13658,23 @@ extern "C" {
         alignment: cl_uint,
     ) -> *mut ::std::os::raw::c_void;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clSVMFree(context: cl_context, svm_pointer: *mut ::std::os::raw::c_void);
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clCreateSamplerWithProperties(
         context: cl_context,
         sampler_properties: *const cl_sampler_properties,
         errcode_ret: *mut cl_int,
     ) -> cl_sampler;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clRetainSampler(sampler: cl_sampler) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clReleaseSampler(sampler: cl_sampler) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clGetSamplerInfo(
         sampler: cl_sampler,
         param_name: cl_sampler_info,
@@ -13683,7 +13683,7 @@ extern "C" {
         param_value_size_ret: *mut usize,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clCreateProgramWithSource(
         context: cl_context,
         count: cl_uint,
@@ -13692,7 +13692,7 @@ extern "C" {
         errcode_ret: *mut cl_int,
     ) -> cl_program;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clCreateProgramWithBinary(
         context: cl_context,
         num_devices: cl_uint,
@@ -13703,7 +13703,7 @@ extern "C" {
         errcode_ret: *mut cl_int,
     ) -> cl_program;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clCreateProgramWithBuiltInKernels(
         context: cl_context,
         num_devices: cl_uint,
@@ -13712,7 +13712,7 @@ extern "C" {
         errcode_ret: *mut cl_int,
     ) -> cl_program;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clCreateProgramWithIL(
         context: cl_context,
         il: *const ::std::os::raw::c_void,
@@ -13720,25 +13720,25 @@ extern "C" {
         errcode_ret: *mut cl_int,
     ) -> cl_program;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clRetainProgram(program: cl_program) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clReleaseProgram(program: cl_program) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clBuildProgram(
         program: cl_program,
         num_devices: cl_uint,
         device_list: *const cl_device_id,
         options: *const ::std::os::raw::c_char,
         pfn_notify: ::std::option::Option<
-            unsafe extern "C" fn(program: cl_program, user_data: *mut ::std::os::raw::c_void),
+            unsafe unsafe extern "C" fn(program: cl_program, user_data: *mut ::std::os::raw::c_void),
         >,
         user_data: *mut ::std::os::raw::c_void,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clCompileProgram(
         program: cl_program,
         num_devices: cl_uint,
@@ -13748,12 +13748,12 @@ extern "C" {
         input_headers: *const cl_program,
         header_include_names: *mut *const ::std::os::raw::c_char,
         pfn_notify: ::std::option::Option<
-            unsafe extern "C" fn(program: cl_program, user_data: *mut ::std::os::raw::c_void),
+            unsafe unsafe extern "C" fn(program: cl_program, user_data: *mut ::std::os::raw::c_void),
         >,
         user_data: *mut ::std::os::raw::c_void,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clLinkProgram(
         context: cl_context,
         num_devices: cl_uint,
@@ -13762,22 +13762,22 @@ extern "C" {
         num_input_programs: cl_uint,
         input_programs: *const cl_program,
         pfn_notify: ::std::option::Option<
-            unsafe extern "C" fn(program: cl_program, user_data: *mut ::std::os::raw::c_void),
+            unsafe unsafe extern "C" fn(program: cl_program, user_data: *mut ::std::os::raw::c_void),
         >,
         user_data: *mut ::std::os::raw::c_void,
         errcode_ret: *mut cl_int,
     ) -> cl_program;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clSetProgramReleaseCallback(
         program: cl_program,
         pfn_notify: ::std::option::Option<
-            unsafe extern "C" fn(program: cl_program, user_data: *mut ::std::os::raw::c_void),
+            unsafe unsafe extern "C" fn(program: cl_program, user_data: *mut ::std::os::raw::c_void),
         >,
         user_data: *mut ::std::os::raw::c_void,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clSetProgramSpecializationConstant(
         program: cl_program,
         spec_id: cl_uint,
@@ -13785,10 +13785,10 @@ extern "C" {
         spec_value: *const ::std::os::raw::c_void,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clUnloadPlatformCompiler(platform: cl_platform_id) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clGetProgramInfo(
         program: cl_program,
         param_name: cl_program_info,
@@ -13797,7 +13797,7 @@ extern "C" {
         param_value_size_ret: *mut usize,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clGetProgramBuildInfo(
         program: cl_program,
         device: cl_device_id,
@@ -13807,14 +13807,14 @@ extern "C" {
         param_value_size_ret: *mut usize,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clCreateKernel(
         program: cl_program,
         kernel_name: *const ::std::os::raw::c_char,
         errcode_ret: *mut cl_int,
     ) -> cl_kernel;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clCreateKernelsInProgram(
         program: cl_program,
         num_kernels: cl_uint,
@@ -13822,16 +13822,16 @@ extern "C" {
         num_kernels_ret: *mut cl_uint,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clCloneKernel(source_kernel: cl_kernel, errcode_ret: *mut cl_int) -> cl_kernel;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clRetainKernel(kernel: cl_kernel) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clReleaseKernel(kernel: cl_kernel) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clSetKernelArg(
         kernel: cl_kernel,
         arg_index: cl_uint,
@@ -13839,14 +13839,14 @@ extern "C" {
         arg_value: *const ::std::os::raw::c_void,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clSetKernelArgSVMPointer(
         kernel: cl_kernel,
         arg_index: cl_uint,
         arg_value: *const ::std::os::raw::c_void,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clSetKernelExecInfo(
         kernel: cl_kernel,
         param_name: cl_kernel_exec_info,
@@ -13854,7 +13854,7 @@ extern "C" {
         param_value: *const ::std::os::raw::c_void,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clGetKernelInfo(
         kernel: cl_kernel,
         param_name: cl_kernel_info,
@@ -13863,7 +13863,7 @@ extern "C" {
         param_value_size_ret: *mut usize,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clGetKernelArgInfo(
         kernel: cl_kernel,
         arg_indx: cl_uint,
@@ -13873,7 +13873,7 @@ extern "C" {
         param_value_size_ret: *mut usize,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clGetKernelWorkGroupInfo(
         kernel: cl_kernel,
         device: cl_device_id,
@@ -13883,7 +13883,7 @@ extern "C" {
         param_value_size_ret: *mut usize,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clGetKernelSubGroupInfo(
         kernel: cl_kernel,
         device: cl_device_id,
@@ -13895,10 +13895,10 @@ extern "C" {
         param_value_size_ret: *mut usize,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clWaitForEvents(num_events: cl_uint, event_list: *const cl_event) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clGetEventInfo(
         event: cl_event,
         param_name: cl_event_info,
@@ -13907,24 +13907,24 @@ extern "C" {
         param_value_size_ret: *mut usize,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clCreateUserEvent(context: cl_context, errcode_ret: *mut cl_int) -> cl_event;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clRetainEvent(event: cl_event) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clReleaseEvent(event: cl_event) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clSetUserEventStatus(event: cl_event, execution_status: cl_int) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clSetEventCallback(
         event: cl_event,
         command_exec_callback_type: cl_int,
         pfn_notify: ::std::option::Option<
-            unsafe extern "C" fn(
+            unsafe unsafe extern "C" fn(
                 event: cl_event,
                 event_command_status: cl_int,
                 user_data: *mut ::std::os::raw::c_void,
@@ -13933,7 +13933,7 @@ extern "C" {
         user_data: *mut ::std::os::raw::c_void,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clGetEventProfilingInfo(
         event: cl_event,
         param_name: cl_profiling_info,
@@ -13942,13 +13942,13 @@ extern "C" {
         param_value_size_ret: *mut usize,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clFlush(command_queue: cl_command_queue) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clFinish(command_queue: cl_command_queue) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueReadBuffer(
         command_queue: cl_command_queue,
         buffer: cl_mem,
@@ -13961,7 +13961,7 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueReadBufferRect(
         command_queue: cl_command_queue,
         buffer: cl_mem,
@@ -13979,7 +13979,7 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueWriteBuffer(
         command_queue: cl_command_queue,
         buffer: cl_mem,
@@ -13992,7 +13992,7 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueWriteBufferRect(
         command_queue: cl_command_queue,
         buffer: cl_mem,
@@ -14010,7 +14010,7 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueFillBuffer(
         command_queue: cl_command_queue,
         buffer: cl_mem,
@@ -14023,7 +14023,7 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueCopyBuffer(
         command_queue: cl_command_queue,
         src_buffer: cl_mem,
@@ -14036,7 +14036,7 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueCopyBufferRect(
         command_queue: cl_command_queue,
         src_buffer: cl_mem,
@@ -14053,7 +14053,7 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueReadImage(
         command_queue: cl_command_queue,
         image: cl_mem,
@@ -14068,7 +14068,7 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueWriteImage(
         command_queue: cl_command_queue,
         image: cl_mem,
@@ -14083,7 +14083,7 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueFillImage(
         command_queue: cl_command_queue,
         image: cl_mem,
@@ -14095,7 +14095,7 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueCopyImage(
         command_queue: cl_command_queue,
         src_image: cl_mem,
@@ -14108,7 +14108,7 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueCopyImageToBuffer(
         command_queue: cl_command_queue,
         src_image: cl_mem,
@@ -14121,7 +14121,7 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueCopyBufferToImage(
         command_queue: cl_command_queue,
         src_buffer: cl_mem,
@@ -14134,7 +14134,7 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueMapBuffer(
         command_queue: cl_command_queue,
         buffer: cl_mem,
@@ -14148,7 +14148,7 @@ extern "C" {
         errcode_ret: *mut cl_int,
     ) -> *mut ::std::os::raw::c_void;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueMapImage(
         command_queue: cl_command_queue,
         image: cl_mem,
@@ -14164,7 +14164,7 @@ extern "C" {
         errcode_ret: *mut cl_int,
     ) -> *mut ::std::os::raw::c_void;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueUnmapMemObject(
         command_queue: cl_command_queue,
         memobj: cl_mem,
@@ -14174,7 +14174,7 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueMigrateMemObjects(
         command_queue: cl_command_queue,
         num_mem_objects: cl_uint,
@@ -14185,7 +14185,7 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueNDRangeKernel(
         command_queue: cl_command_queue,
         kernel: cl_kernel,
@@ -14198,10 +14198,10 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueNativeKernel(
         command_queue: cl_command_queue,
-        user_func: ::std::option::Option<unsafe extern "C" fn(arg1: *mut ::std::os::raw::c_void)>,
+        user_func: ::std::option::Option<unsafe unsafe extern "C" fn(arg1: *mut ::std::os::raw::c_void)>,
         args: *mut ::std::os::raw::c_void,
         cb_args: usize,
         num_mem_objects: cl_uint,
@@ -14212,7 +14212,7 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueMarkerWithWaitList(
         command_queue: cl_command_queue,
         num_events_in_wait_list: cl_uint,
@@ -14220,7 +14220,7 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueBarrierWithWaitList(
         command_queue: cl_command_queue,
         num_events_in_wait_list: cl_uint,
@@ -14228,13 +14228,13 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueSVMFree(
         command_queue: cl_command_queue,
         num_svm_pointers: cl_uint,
         svm_pointers: *mut *mut ::std::os::raw::c_void,
         pfn_free_func: ::std::option::Option<
-            unsafe extern "C" fn(
+            unsafe unsafe extern "C" fn(
                 queue: cl_command_queue,
                 num_svm_pointers: cl_uint,
                 svm_pointers: *mut *mut ::std::os::raw::c_void,
@@ -14247,7 +14247,7 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueSVMMemcpy(
         command_queue: cl_command_queue,
         blocking_copy: cl_bool,
@@ -14259,7 +14259,7 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueSVMMemFill(
         command_queue: cl_command_queue,
         svm_ptr: *mut ::std::os::raw::c_void,
@@ -14271,7 +14271,7 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueSVMMap(
         command_queue: cl_command_queue,
         blocking_map: cl_bool,
@@ -14283,7 +14283,7 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueSVMUnmap(
         command_queue: cl_command_queue,
         svm_ptr: *mut ::std::os::raw::c_void,
@@ -14292,7 +14292,7 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueSVMMigrateMem(
         command_queue: cl_command_queue,
         num_svm_pointers: cl_uint,
@@ -14304,13 +14304,13 @@ extern "C" {
         event: *mut cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clGetExtensionFunctionAddressForPlatform(
         platform: cl_platform_id,
         func_name: *const ::std::os::raw::c_char,
     ) -> *mut ::std::os::raw::c_void;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clCreateImage2D(
         context: cl_context,
         flags: cl_mem_flags,
@@ -14322,7 +14322,7 @@ extern "C" {
         errcode_ret: *mut cl_int,
     ) -> cl_mem;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clCreateImage3D(
         context: cl_context,
         flags: cl_mem_flags,
@@ -14336,28 +14336,28 @@ extern "C" {
         errcode_ret: *mut cl_int,
     ) -> cl_mem;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueMarker(command_queue: cl_command_queue, event: *mut cl_event) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueWaitForEvents(
         command_queue: cl_command_queue,
         num_events: cl_uint,
         event_list: *const cl_event,
     ) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueBarrier(command_queue: cl_command_queue) -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clUnloadCompiler() -> cl_int;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clGetExtensionFunctionAddress(
         func_name: *const ::std::os::raw::c_char,
     ) -> *mut ::std::os::raw::c_void;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clCreateCommandQueue(
         context: cl_context,
         device: cl_device_id,
@@ -14365,7 +14365,7 @@ extern "C" {
         errcode_ret: *mut cl_int,
     ) -> cl_command_queue;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clCreateSampler(
         context: cl_context,
         normalized_coords: cl_bool,
@@ -14374,7 +14374,7 @@ extern "C" {
         errcode_ret: *mut cl_int,
     ) -> cl_sampler;
 }
-extern "C" {
+unsafe extern "C" {
     pub fn clEnqueueTask(
         command_queue: cl_command_queue,
         kernel: cl_kernel,
