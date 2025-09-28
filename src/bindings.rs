@@ -13465,7 +13465,7 @@ unsafe extern "C" {
         num_devices: cl_uint,
         devices: *const cl_device_id,
         pfn_notify: ::std::option::Option<
-            unsafe unsafe extern "C" fn(
+            unsafe extern "C" fn(
                 errinfo: *const ::std::os::raw::c_char,
                 private_info: *const ::std::os::raw::c_void,
                 cb: usize,
@@ -13481,7 +13481,7 @@ unsafe extern "C" {
         properties: *const cl_context_properties,
         device_type: cl_device_type,
         pfn_notify: ::std::option::Option<
-            unsafe unsafe extern "C" fn(
+            unsafe extern "C" fn(
                 errinfo: *const ::std::os::raw::c_char,
                 private_info: *const ::std::os::raw::c_void,
                 cb: usize,
@@ -13511,7 +13511,7 @@ unsafe extern "C" {
     pub fn clSetContextDestructorCallback(
         context: cl_context,
         pfn_notify: ::std::option::Option<
-            unsafe unsafe extern "C" fn(context: cl_context, user_data: *mut ::std::os::raw::c_void),
+            unsafe extern "C" fn(context: cl_context, user_data: *mut ::std::os::raw::c_void),
         >,
         user_data: *mut ::std::os::raw::c_void,
     ) -> cl_int;
@@ -13645,7 +13645,7 @@ unsafe extern "C" {
     pub fn clSetMemObjectDestructorCallback(
         memobj: cl_mem,
         pfn_notify: ::std::option::Option<
-            unsafe unsafe extern "C" fn(memobj: cl_mem, user_data: *mut ::std::os::raw::c_void),
+            unsafe extern "C" fn(memobj: cl_mem, user_data: *mut ::std::os::raw::c_void),
         >,
         user_data: *mut ::std::os::raw::c_void,
     ) -> cl_int;
@@ -13733,7 +13733,7 @@ unsafe extern "C" {
         device_list: *const cl_device_id,
         options: *const ::std::os::raw::c_char,
         pfn_notify: ::std::option::Option<
-            unsafe unsafe extern "C" fn(program: cl_program, user_data: *mut ::std::os::raw::c_void),
+            unsafe extern "C" fn(program: cl_program, user_data: *mut ::std::os::raw::c_void),
         >,
         user_data: *mut ::std::os::raw::c_void,
     ) -> cl_int;
@@ -13748,7 +13748,7 @@ unsafe extern "C" {
         input_headers: *const cl_program,
         header_include_names: *mut *const ::std::os::raw::c_char,
         pfn_notify: ::std::option::Option<
-            unsafe unsafe extern "C" fn(program: cl_program, user_data: *mut ::std::os::raw::c_void),
+            unsafe extern "C" fn(program: cl_program, user_data: *mut ::std::os::raw::c_void),
         >,
         user_data: *mut ::std::os::raw::c_void,
     ) -> cl_int;
@@ -13762,7 +13762,7 @@ unsafe extern "C" {
         num_input_programs: cl_uint,
         input_programs: *const cl_program,
         pfn_notify: ::std::option::Option<
-            unsafe unsafe extern "C" fn(program: cl_program, user_data: *mut ::std::os::raw::c_void),
+            unsafe extern "C" fn(program: cl_program, user_data: *mut ::std::os::raw::c_void),
         >,
         user_data: *mut ::std::os::raw::c_void,
         errcode_ret: *mut cl_int,
@@ -13772,7 +13772,7 @@ unsafe extern "C" {
     pub fn clSetProgramReleaseCallback(
         program: cl_program,
         pfn_notify: ::std::option::Option<
-            unsafe unsafe extern "C" fn(program: cl_program, user_data: *mut ::std::os::raw::c_void),
+            unsafe extern "C" fn(program: cl_program, user_data: *mut ::std::os::raw::c_void),
         >,
         user_data: *mut ::std::os::raw::c_void,
     ) -> cl_int;
@@ -13924,7 +13924,7 @@ unsafe extern "C" {
         event: cl_event,
         command_exec_callback_type: cl_int,
         pfn_notify: ::std::option::Option<
-            unsafe unsafe extern "C" fn(
+            unsafe extern "C" fn(
                 event: cl_event,
                 event_command_status: cl_int,
                 user_data: *mut ::std::os::raw::c_void,
