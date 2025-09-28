@@ -14240,7 +14240,7 @@ unsafe extern "C" {
                 svm_pointers: *mut *mut ::std::os::raw::c_void,
                 user_data: *mut ::std::os::raw::c_void,
             ),
-        >
+        >,
         user_data: *mut ::std::os::raw::c_void,
         num_events_in_wait_list: cl_uint,
         event_wait_list: *const cl_event,
